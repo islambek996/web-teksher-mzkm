@@ -1,225 +1,44 @@
 * {
-    box-sizing: border-box
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     background: #f4f7f5;
     color: #1d2522;
-    font-family: Arial, Helvetica, sans-serif
+    font-family: Arial, Helvetica, sans-serif;
 }
+
+/* =========================
+   HEADER
+   ========================= */
 
 .topbar {
     height: 64px;
     background: #123B63;
     color: #fff;
+
     display: flex;
     align-items: center;
+
     gap: 15px;
     padding: 0 20px;
-    box-shadow: 0 2px 8px #0002
+
+    box-shadow: 0 2px 8px #0002;
 }
 
 .brand {
     font-size: 22px;
     font-weight: 800;
-    letter-spacing: .5px
+    letter-spacing: 0.5px;
 }
 
 .subtitle {
     font-size: 14px;
-    opacity: .9
+    opacity: 0.9;
 }
 
-.page {
-    width: min(760px, 100%);
-    margin: auto;
-    padding: 14px
-}
-
-.scanner-card,
-.card,
-.counter-card {
-    background: #fff;
-    border-radius: 16px;
-    margin-bottom: 14px;
-    padding: 14px;
-    box-shadow: 0 2px 10px #00000010
-}
-
-.reader {
-    width: 100%;
-    min-height: 270px;
-    background: #111;
-    border-radius: 12px;
-    overflow: hidden
-}
-
-.reader video {
-    width: 100% !important;
-    height: auto !important
-}
-
-#reader__scan_region {
-    min-height: 270px
-}
-
-.hint {
-    text-align: center;
-    color: #66736d;
-    font-size: 14px;
-    padding: 12px 0
-}
-
-.camera-actions {
-    display: flex;
-    gap: 10px
-}
-
-.btn {
-    border: 0;
-    border-radius: 12px;
-    padding: 14px 18px;
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    flex: 1
-}
-
-.btn:disabled {
-    opacity: .45;
-    cursor: not-allowed
-}
-
-.primary {
-    background: #123B63;
-    color: #fff
-}
-
-.secondary {
-    background: #e9efec;
-    color: #24352e
-}
-
-.export {
-    width: 100%;
-    background: #123B63;
-    color: #fff;
-    margin-bottom: 10px
-}
-
-.counter-card {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 12px
-}
-
-.counter-card span {
-    color: #66736d
-}
-
-.counter-card strong {
-    font-size: 28px
-}
-
-.section-title {
-    font-size: 13px;
-    font-weight: 800;
-    color: #6b7772
-}
-
-.last-code {
-    margin-top: 8px;
-    background: #f1f5f3;
-    border-radius: 12px;
-    padding: 14px;
-    min-height: 48px;
-    word-break: break-all;
-    font-family: monospace;
-    font-size: 13px
-}
-
-.status {
-    margin-top: 8px;
-    color: #123B63;
-    font-size: 13px;
-    font-weight: 700
-}
-
-.history-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center
-}
-
-.text-btn {
-    border: 0;
-    background: none;
-    color: #b13a32;
-    font-weight: 700;
-    cursor: pointer
-}
-
-.history {
-    margin-top: 10px;
-    max-height: 360px;
-    overflow: auto;
-    border-top: 1px solid #e8eeeb
-}
-
-.row {
-    display: flex;
-    gap: 10px;
-    padding: 10px 2px;
-    border-bottom: 1px solid #e8eeeb;
-    font-family: monospace;
-    font-size: 12px
-}
-
-.num {
-    width: 42px;
-    flex: none;
-    color: #7a8580
-}
-
-.code {
-    word-break: break-all
-}
-
-@media(max-width:520px) {
-    .topbar {
-        padding: 0 15px
-    }
-
-    .subtitle {
-        font-size: 12px
-    }
-
-    .page {
-        padding: 9px
-    }
-
-    .reader,
-    #reader__scan_region {
-        min-height: 250px
-    }
-}
-
-/* Обычная рамка сканирования */
-#reader #qr-shaded-region>div {
-    background-color: #00ff00 !important;
-}
-
-/* Дубликат — только уголки становятся красными */
-#reader.scanner-duplicate #qr-shaded-region>div {
-    background-color: #d32f2f !important;
-}
-
-/* Сам фон области сканирования не изменяем */
-#reader #qr-shaded-region {
-    background-color: transparent !important;
-}
+/* Ссылка МЗКМ */
 
 .mzkm-link {
     color: inherit;
@@ -229,4 +48,314 @@ body {
 
 .mzkm-link:hover {
     text-decoration: underline;
+}
+
+/* =========================
+   PAGE
+   ========================= */
+
+.page {
+    width: min(760px, 100%);
+    margin: auto;
+    padding: 14px;
+}
+
+/* =========================
+   CARDS
+   ========================= */
+
+.scanner-card,
+.card,
+.counter-card {
+    background: #fff;
+
+    border-radius: 16px;
+
+    margin-bottom: 14px;
+    padding: 14px;
+
+    box-shadow: 0 2px 10px #00000010;
+}
+
+/* =========================
+   CAMERA
+   ========================= */
+
+.reader {
+    width: 100%;
+    min-height: 270px;
+
+    background: #111;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+}
+
+.reader video {
+    width: 100% !important;
+    height: auto !important;
+}
+
+#reader__scan_region {
+    min-height: 270px;
+}
+
+/*
+   ВАЖНО:
+   фон области сканирования прозрачный.
+   Картинка камеры не окрашивается.
+*/
+
+#reader #qr-shaded-region {
+    background-color: transparent !important;
+}
+
+/* =========================
+   SCANNER CORNERS
+   ========================= */
+
+/*
+   Обычный КМ
+   Зелёные уголки
+*/
+
+#reader #qr-shaded-region>div {
+    background-color: #00ff00 !important;
+}
+
+/*
+   Дубликат
+   Красные уголки
+*/
+
+#reader.scanner-duplicate #qr-shaded-region>div {
+    background-color: #d32f2f !important;
+}
+
+/* =========================
+   CAMERA HINT
+   ========================= */
+
+.hint {
+    text-align: center;
+
+    color: #66736d;
+
+    font-size: 14px;
+
+    padding: 12px 0;
+}
+
+/* =========================
+   CAMERA BUTTONS
+   ========================= */
+
+.camera-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn {
+    border: 0;
+
+    border-radius: 12px;
+
+    padding: 14px 18px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    flex: 1;
+}
+
+.btn:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/*
+   Основная кнопка
+*/
+
+.primary {
+    background: #123B63;
+    color: #fff;
+}
+
+/*
+   Вторичная кнопка
+*/
+
+.secondary {
+    background: #e9efec;
+    color: #24352e;
+}
+
+/*
+   Кнопка CSV
+*/
+
+.export {
+    width: 100%;
+
+    background: #123B63;
+    color: #fff;
+
+    margin-bottom: 10px;
+}
+
+/* =========================
+   COUNTER
+   ========================= */
+
+.counter-card {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.counter-card span {
+    color: #66736d;
+}
+
+.counter-card strong {
+    font-size: 28px;
+    color: #123B63;
+}
+
+/* =========================
+   SECTION TITLE
+   ========================= */
+
+.section-title {
+    font-size: 13px;
+
+    font-weight: 800;
+
+    color: #6b7772;
+}
+
+/* =========================
+   LAST CODE
+   ========================= */
+
+.last-code {
+    margin-top: 8px;
+
+    background: #f1f5f3;
+
+    border-radius: 12px;
+
+    padding: 14px;
+
+    min-height: 48px;
+
+    word-break: break-all;
+
+    font-family: monospace;
+
+    font-size: 13px;
+}
+
+/* =========================
+   STATUS
+   ========================= */
+
+.status {
+    margin-top: 8px;
+
+    color: #123B63;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+/* =========================
+   HISTORY
+   ========================= */
+
+.history-head {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.text-btn {
+    border: 0;
+
+    background: none;
+
+    color: #b13a32;
+
+    font-weight: 700;
+
+    cursor: pointer;
+}
+
+.history {
+    margin-top: 10px;
+
+    max-height: 360px;
+
+    overflow: auto;
+
+    border-top: 1px solid #e8eeeb;
+}
+
+.row {
+    display: flex;
+
+    gap: 10px;
+
+    padding: 10px 2px;
+
+    border-bottom: 1px solid #e8eeeb;
+
+    font-family: monospace;
+
+    font-size: 12px;
+}
+
+.num {
+    width: 42px;
+
+    flex: none;
+
+    color: #123B63;
+}
+
+.code {
+    word-break: break-all;
+}
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 520px) {
+
+    .topbar {
+        padding: 0 15px;
+    }
+
+    .subtitle {
+        font-size: 12px;
+    }
+
+    .page {
+        padding: 9px;
+    }
+
+    .reader,
+    #reader__scan_region {
+        min-height: 250px;
+    }
 }
