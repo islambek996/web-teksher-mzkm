@@ -71,6 +71,18 @@ function setScannerFrame(isDuplicate) {
   }
 }
 
+function setScannerFrame(isDuplicate) {
+  const reader = document.getElementById("reader");
+
+  if (!reader) return;
+
+  if (isDuplicate) {
+    reader.classList.add("scanner-duplicate");
+  } else {
+    reader.classList.remove("scanner-duplicate");
+  }
+}
+
 function App() {
 
   const [codes, setCodes] = useState(loadCodes);
@@ -224,14 +236,11 @@ function App() {
      */
     if (codeSetRef.current.has(km)) {
 
-      setStatus(
-        "Дубликат — КМ не добавлен"
-      );
+      setStatus("Дубликат — КМ не добавлен");
 
       setScannerFrame(true);
 
       beep(false);
-
       return;
     }
 
@@ -247,20 +256,12 @@ function App() {
     setScannerFrame(false);
 
     codeSetRef.current.add(km);
-
-
-    /*
-     * Добавляем КМ в React state.
-     */
+    
     setCodes(previousCodes => {
-
-      /*
-       * Дополнительная страховка.
-       */
       if (previousCodes.includes(km)) {
         return previousCodes;
       }
-
+    
       return [
         ...previousCodes,
         km

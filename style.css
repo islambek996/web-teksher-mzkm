@@ -206,7 +206,17 @@ body {
     }
 }
 
-/* Красная рамка при обнаружении дубликата */
-#reader.scanner-duplicate #qr-shaded-region {
-    border-color: #d32f2f !important;
+/* Обычная рамка сканирования */
+#reader #qr-shaded-region > div {
+    background-color: #00ff00 !important;
+}
+
+/* Дубликат — только уголки становятся красными */
+#reader.scanner-duplicate #qr-shaded-region > div {
+    background-color: #d32f2f !important;
+}
+
+/* Сам фон области сканирования не изменяем */
+#reader #qr-shaded-region {
+    background-color: transparent !important;
 }
