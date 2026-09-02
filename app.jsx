@@ -57,6 +57,19 @@ function loadCodes() {
   }
 }
 
+function setScannerFrame(isDuplicate) {
+  const reader = document.getElementById("reader");
+
+  if (!reader) {
+    return;
+  }
+
+  if (isDuplicate) {
+    reader.classList.add("scanner-duplicate");
+  } else {
+    reader.classList.remove("scanner-duplicate");
+  }
+}
 
 function App() {
 
@@ -215,11 +228,12 @@ function App() {
         "Дубликат — КМ не добавлен"
       );
 
+      setScannerFrame(true);
+
       beep(false);
 
       return;
     }
-
 
     /*
      * Сразу добавляем КМ в Set.
@@ -230,6 +244,8 @@ function App() {
      * вызовет callback ещё раз,
      * этот КМ уже будет считаться существующим.
      */
+    setScannerFrame(false);
+
     codeSetRef.current.add(km);
 
 
@@ -347,7 +363,7 @@ function App() {
          * Ошибки отдельных кадров
          * игнорируем.
          */
-        () => {}
+        () => { }
 
       );
 
@@ -384,14 +400,14 @@ function App() {
 
       await scannerRef.current.stop();
 
-    } catch {}
+    } catch { }
 
 
     try {
 
       scannerRef.current.clear();
 
-    } catch {}
+    } catch { }
 
 
     scannerRef.current = null;
@@ -526,29 +542,17 @@ function App() {
 
 
     const stamp =
-      date.getFullYear() +
-      String(
-        date.getMonth() + 1
-      ).padStart(2, "0") +
-      String(
-        date.getDate()
-      ).padStart(2, "0") +
+      String(date.getDate()).padStart(2, "0") +
+      String(date.getMonth() + 1).padStart(2, "0") +
+      String(date.getFullYear()).slice(-2) +
       "_" +
-      String(
-        date.getHours()
-      ).padStart(2, "0") +
-      String(
-        date.getMinutes()
-      ).padStart(2, "0") +
-      String(
-        date.getSeconds()
-      ).padStart(2, "0");
-
+      String(date.getHours()).padStart(2, "0") +
+      String(date.getMinutes()).padStart(2, "0");
 
     a.href = url;
 
     a.download =
-      `GS1_${stamp}.csv`;
+      `TeksherMZKM_${stamp}.csv`;
 
 
     document.body.appendChild(a);
@@ -574,7 +578,7 @@ function App() {
 
         scannerRef.current
           .stop()
-          .catch(() => {});
+          .catch(() => { });
 
       }
 
@@ -921,7 +925,7 @@ function beep(ok) {
       );
     }
 
-  } catch {}
+  } catch { }
 }
 
 

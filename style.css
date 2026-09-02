@@ -205,3 +205,8 @@ body {
         min-height: 250px
     }
 }
+
+/* Красная рамка при обнаружении дубликата */
+#reader.scanner-duplicate #qr-shaded-region {
+    border-color: #d32f2f !important;
+}
