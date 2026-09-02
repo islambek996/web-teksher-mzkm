@@ -1,0 +1,9 @@
+{
+  "name": "Текшер МЗКМ",
+  "short_name": "Текшер",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#f4f7f5",
+  "theme_color": "#176b4d",
+  "lang": "ru"
+}
