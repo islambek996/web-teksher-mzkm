@@ -17,14 +17,11 @@ body {
     height: 64px;
     background: #123B63;
     color: #fff;
-
     display: flex;
     align-items: center;
-
+    justify-content: center;
     gap: 15px;
     padding: 0 20px;
-
-    box-shadow: 0 2px 8px #0002;
 }
 
 .brand {
