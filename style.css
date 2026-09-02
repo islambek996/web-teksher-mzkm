@@ -11,7 +11,7 @@ body {
 
 .topbar {
     height: 64px;
-    background: #176b4d;
+    background: #123B63;
     color: #fff;
     display: flex;
     align-items: center;
@@ -92,7 +92,7 @@ body {
 }
 
 .primary {
-    background: #176b4d;
+    background: #123B63;
     color: #fff
 }
 
@@ -103,7 +103,7 @@ body {
 
 .export {
     width: 100%;
-    background: #176b4d;
+    background: #123B63;
     color: #fff;
     margin-bottom: 10px
 }
@@ -142,7 +142,7 @@ body {
 
 .status {
     margin-top: 8px;
-    color: #176b4d;
+    color: #123B63;
     font-size: 13px;
     font-weight: 700
 }
