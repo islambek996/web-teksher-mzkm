@@ -616,12 +616,24 @@ function App() {
       ),
 
       React.createElement(
-        "div",
-        {
-          className: "subtitle"
-        },
-        "МЗКМ · Сканирование КМ"
-      )
+  "div",
+  {
+    className: "subtitle"
+  },
+
+  React.createElement(
+    "a",
+    {
+      href: "https://label.teksher.kg",
+      target: "_blank",
+      rel: "noopener noreferrer",
+      className: "mzkm-link"
+    },
+    "МЗКМ"
+  ),
+
+  " · Сканирование КМ"
+)
     ),
 
 

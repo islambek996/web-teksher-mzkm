@@ -207,16 +207,26 @@ body {
 }
 
 /* Обычная рамка сканирования */
-#reader #qr-shaded-region > div {
+#reader #qr-shaded-region>div {
     background-color: #00ff00 !important;
 }
 
 /* Дубликат — только уголки становятся красными */
-#reader.scanner-duplicate #qr-shaded-region > div {
+#reader.scanner-duplicate #qr-shaded-region>div {
     background-color: #d32f2f !important;
 }
 
 /* Сам фон области сканирования не изменяем */
 #reader #qr-shaded-region {
     background-color: transparent !important;
+}
+
+.mzkm-link {
+    color: inherit;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.mzkm-link:hover {
+    text-decoration: underline;
 }
